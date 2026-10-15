@@ -2,17 +2,40 @@
 
 <PageTitle>Counter</PageTitle>
 
-<h1>Counter</h1>
+<MudText Typo="Typo.h3" GutterBottom="true">Counter</MudText>
 
-<p role="status">Current count: @currentCount</p>
+<MudText Typo="Typo.body1" Class="mb-4">
+    Demonstration von serverseitiger Interaktivität: jeder Klick läuft über den Circuit.
+</MudText>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<MudPaper Class="pa-6" Elevation="2">
+    <MudText Typo="Typo.h6" Class="mb-4">Current count: @_currentCount</MudText>
+
+    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   StartIcon="@Icons.Material.Filled.Add"
+                   OnClick="IncrementCount">
+            Click me
+        </MudButton>
+
+        <MudButton Variant="Variant.Outlined"
+                   Color="Color.Secondary"
+                   StartIcon="@Icons.Material.Filled.RestartAlt"
+                   OnClick="ResetCount">
+            Reset
+        </MudButton>
+
+        <MudChip T="string" Size="Size.Small" Color="@(_currentCount > 0 ? Color.Success : Color.Default)">
+            @_currentCount @(_currentCount == 1 ? "Klick" : "Klicks")
+        </MudChip>
+    </MudStack>
+</MudPaper>
 
 @code {
-    private int currentCount = 0;
+    private int _currentCount;
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
+    private void IncrementCount() => _currentCount++;
+
+    private void ResetCount() => _currentCount = 0;
 }

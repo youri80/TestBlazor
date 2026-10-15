@@ -2,6 +2,54 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
 
-Welcome to your new app.
+<MudText Typo="Typo.body1" Class="mb-6">
+    Willkommen bei deiner Blazor-Web-App — UI gebaut mit MudBlazor 9 (Material Design).
+</MudText>
+
+<MudGrid Spacing="3">
+    <MudItem xs="12" sm="6" md="4">
+        <MudCard Elevation="2" Class="pa-2">
+            <MudCardContent>
+                <MudIcon Icon="@Icons.Material.Filled.Bolt" Color="Color.Primary" Size="Size.Large" />
+                <MudText Typo="Typo.h6" Class="mt-2">Interactive Server</MudText>
+                <MudText Typo="Typo.body2" Class="mud-text-secondary">
+                    UI-Events laufen über eine SignalR-Verbindung zum Server — kein WASM-Download.
+                </MudText>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+
+    <MudItem xs="12" sm="6" md="4">
+        <MudCard Elevation="2" Class="pa-2">
+            <MudCardContent>
+                <MudIcon Icon="@Icons.Material.Filled.Palette" Color="Color.Secondary" Size="Size.Large" />
+                <MudText Typo="Typo.h6" Class="mt-2">Material Design</MudText>
+                <MudText Typo="Typo.body2" Class="mud-text-secondary">
+                    Über 80 Komponenten: Tables, Dialogs, Forms, Snackbars und mehr.
+                </MudText>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+
+    <MudItem xs="12" sm="6" md="4">
+        <MudCard Elevation="2" Class="pa-2">
+            <MudCardContent>
+                <MudIcon Icon="@Icons.Material.Filled.Code" Color="Color.Tertiary" Size="Size.Large" />
+                <MudText Typo="Typo.h6" Class="mt-2">.NET 10</MudText>
+                <MudText Typo="Typo.body2" Class="mud-text-secondary">
+                    Blazor Web App Template mit Static Asset Delivery und Fingerprinting.
+                </MudText>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+</MudGrid>
+
+<MudDivider Class="my-8" />
+
+<MudPaper Class="pa-4" Elevation="0" Outlined="true">
+    <MudText Typo="Typo.subtitle1" Class="mb-2">Navigation</MudText>
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="counter" StartIcon="@Icons.Material.Filled.Add">Zum Counter</MudButton>
+    <MudButton Variant="Variant.Outlined" Color="Color.Primary" Href="weather" Class="ml-2" StartIcon="@Icons.Material.Filled.Cloud">Zum Weather</MudButton>
+</MudPaper>

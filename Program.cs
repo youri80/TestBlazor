@@ -1,3 +1,4 @@
+using MudBlazor.Services;
 using TestBlazor.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// MudBlazor: AddMudServices() liegt im Namespace MudBlazor.Services (nicht MudBlazor)
+builder.Services.AddMudServices();
 
 var app = builder.Build();
 
